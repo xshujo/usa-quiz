@@ -1,0 +1,60 @@
+/* ========================================================================= */
+/* === CSS pour l'aspect visuel et le contrôle d'un curseur personnalisé === */
+/* ========================================================================= */
+
+.curseur {
+    height: 3rem;
+    width: 3rem;
+
+    /*Positionnement CSS: fixed
+    - pour l'enlever du flux normal du document et le positionner par rapport à la fenêtre du navigateur (viewport)
+    - pour permettre également le positionnement de ses pseudo-éléments
+    */
+    position: fixed;
+
+    /*Décalage pour que le centre corresponde
+    au coin supérieur gauche de  la fenêtre
+    MOINS moitié de la largeur et MOINS moité de la hauteur
+    */
+    top: -1.5rem;
+    left: -1.5rem;
+
+    /*Affichage en avant-plan de toutes les autres éléments HTML*/
+    z-index: 500;
+
+    /*
+    Le curseur ne doit pas recevoir les événements de souris...
+    voir: https://developer.mozilla.org/fr/docs/Web/CSS/pointer-events
+    */
+    pointer-events: none;
+
+    /*Le navigateur doit être à l'affut des changements de propriétés du curseur
+    afin qu'il puisse mettre en place les optimisations nécessaires pour l'affichage et la réactivité de la page
+    La propriété will-change doir être utilisée avec parcimonie
+    voir: https://developer.mozilla.org/fr/docs/Web/CSS/will-change
+    */
+    will-change: transform;
+
+    /*Transition*/
+    transition: transform 0.5s cubic-bezier(0.15, 0.9, 0.35, 0.95);
+}
+
+/* ============================================ */
+/* ===== Cosmétique (image en avant-plan) ===== */
+/* =============================================*/
+
+.curseur::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+
+    /*Mettre et positionner l'image de la bulle*/
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-image: url("../images/drapeau.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

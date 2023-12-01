@@ -1,0 +1,44 @@
+/* ====================== */
+/* ===== Animations ===== */
+/* ====================== */
+
+/* = Animation de l'intro = */
+@keyframes animLettre {
+    from {
+        opacity: 0.6;
+        transform: scaleY(3) translateY(-100vw);
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+
+}
+
+.lettre {
+    animation: animLettre 300ms forwards;
+}
+
+/* = Animation du footer = */
+@keyframes animFooter {
+
+    from,
+    50% {
+        color: lavenderblush;
+    }
+
+    25%,
+    75% {
+        color: #caaec6;
+    }
+
+    to {
+        color: lavenderblush;
+    }
+}
+
+h1:last-child {
+    animation: animFooter 1s infinite;
+}

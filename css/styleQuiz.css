@@ -1,0 +1,162 @@
+/* ============================================== */
+/* ===== Mise en page des questions du quiz ===== */
+/* ============================================== */
+
+main.quiz,
+main.fin {
+    /*Conteneur flex en colonne*/
+    flex-direction: column;
+
+    /*N'est pas affiché au démarrage*/
+    display: none;
+}
+
+main.quiz > header {
+    font-family: 'Courier Prime', monospace;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 0.5rem;
+
+    /*Position afin de pouvoir animer la barre*/
+    position: relative;
+}
+
+main.fin,
+main.intro {
+    background-image: url(../images/fondDebutFin.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+section #titreQuestion {
+    font-size: 1.5rem;
+    width: 90vw;
+    margin-top: 1rem;
+    text-shadow: 1px 1px 1px black;
+}
+
+section #lesChoix {
+    width: 90vw;
+
+    /*Étirement comme item flex*/
+    flex: 1 1 auto;
+    /*Conteneur flex en colonne*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.choix {
+    font-size: 2rem;
+    font-weight: bold;
+    width: 80vw;
+    height: 21vh;
+    line-height: 21vh;
+
+    color: whitesmoke;
+    text-shadow: 2px 2px 0px black;
+
+    cursor: pointer;
+
+    position: relative;
+
+    background-image: url("../images/usa.png");
+    background-repeat: no-repeat;
+    background-size: 90% 100%;
+    background-position: center center;
+
+    transition: transform 0.5s;
+}
+
+div.choix:hover,
+div.choix:active {
+    transform: scale(1.2) rotateZ(15deg);
+}
+
+/*La barre qui illustre l'avancement du quiz*/
+.barreAvancement {
+    width: 0vw;
+    height: 1vh;
+    background-color: whitesmoke;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+main.fin {
+    font-size: 6rem;
+    text-shadow: 1px 1px 0px black;
+    /*Conteneur flex en colonne*/
+    flex-direction: column;
+    /*Non affiché au démarrage*/
+    display: none;
+}
+
+/* ======================================================== */
+/* ===== Ajustement pour les écrans de taille moyenne ===== */
+/* ======================================================== */
+
+@media screen and (min-width: 576px) {
+    section #lesChoix {
+        width: 95vw;
+        /*Étirement comme item flex*/
+        flex: 1 1 auto;
+        /*Conteneur flex en rangée*/
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    section #titreQuestion {
+        font-size: 2rem;
+    }
+
+    div.choix {
+        height: 30vh;
+        line-height: 30vh;
+        font-size: 1.8rem;
+        background-size: 100% 100%;
+    }
+
+    main.fin {
+        text-shadow: 2px 2px 0px black;
+    }
+}
+
+/* ============================================================ */
+/* ===== Ajustement pour les écrans de plus grande taille ===== */
+/* ============================================================ */
+
+@media screen and (min-width: 992px) {
+
+    main.quiz > header {
+        font-size: 3.8rem;
+    }
+
+    section #titreQuestion {
+        font-size: 3rem;
+    }
+
+    section #lesChoix {
+        /*Conteneur flex en rangée*/
+        flex-direction: row;
+    }
+
+    div.choix {
+        font-size: 3rem;
+        width: 40vmin;
+        height: 40vmin;
+        line-height: 40vmin;
+        text-shadow: 3px 3px 0px black;
+        background-size: 100% 100%;
+    }
+
+    main.fin {
+        text-shadow: 2px 2px 0px black;
+    }
+}

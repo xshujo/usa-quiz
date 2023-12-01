@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+
+<head>
+    <title>Quiz sur les États</title>
+    <meta charset="UTF-8">
+
+    <!-- Ajustement de la taille du viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Polices de caractères utilisées-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Polices d'icônes utilisées-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Références aux CSS-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styleBase.css">
+    <link rel="stylesheet" href="css/styleQuiz.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/curseur.css">
+</head>
+
+<body>
+    <!-- Page d l'intro -->
+    <main class="intro">
+        <footer>
+            <h1>Cliquer pour commencer le quiz</h1>
+        </footer>
+    </main>
+
+    <!-- Page du quiz -->
+    <main class="quiz">
+        <!-- Header -->
+        <header>
+            Connais-tu les États-Unis?
+            <div class="barreAvancement"></div>
+        </header>
+
+        <!-- Questions et réponses -->
+        <section>
+            <div id="titreQuestion">Titre de la question</div>
+            <div id="lesChoix">
+                <div class="choix">Choix 1</div>
+                <div class="choix">Choix 2</div>
+                <div class="choix">Choix 3</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Page de fin -->
+    <main class="fin"></main>
+
+    <!-- Le curseur -->
+    <div class="curseur"></div>
+
+    <!-- Chargement des scripts -->
+    <script src="scripts/questionsQuiz.js"></script>
+    <script src="scripts/fonctions.js"></script>
+    <script src="scripts/application.js"></script>
+</body>
+
+</html>

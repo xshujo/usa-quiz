@@ -1,0 +1,178 @@
+/* ================================ */
+/* ===== Reset supplémentaire ===== */
+/* ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    outline: none;
+}
+
+/* ======================== */
+/* ===== Mise en page ===== */
+/* ======================== */
+
+html {
+    overflow: hidden;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    font-size: 0.875rem;
+
+    font-family: 'Courier Prime', monospace;
+    background-image: url(../images/fondPetit.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: lavenderblush;
+    color: whitesmoke;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+
+    /*Conteneur flex en rangée*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    min-height: 15vh;
+    width: 100vw;
+    text-align: center;
+    border-bottom: 1px solid whitesmoke;
+    text-shadow: 0px 0px 1px black;
+
+    /*Conteneur flex en rangée*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*Ne peut rétrécir comme item flex*/
+    flex: 0 0 auto;
+}
+
+footer {
+    min-height: 10vh;
+    width: 100vw;
+    text-align: center;
+    text-shadow: 2px 2px 0px black;
+
+    font-size: 1rem;
+
+    /*Position fixe*/
+    position: fixed;
+    bottom: 30vh;
+
+    /*Conteneur flex en rangée*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*Ne peut rétrécir comme item flex*/
+    flex: 0 0 auto;
+}
+
+h1 {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+p {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+section {
+    width: 100vw;
+    height: 85vh;
+
+    font-size: 2rem;
+    text-align: center;
+
+    /*Conteneur flex colonne*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lettre {
+    font-family: 'Courier Prime', monospace;
+    font-size: 3rem;
+    font-weight: bold;
+    opacity: 0;
+    text-shadow: 3px 3px 0px black;
+}
+
+/* ========================================================================== */
+/* ===== Ajustement pour les écrans de très petite taille (Galaxy Fold) ===== */
+/* ========================================================================== */
+
+@media screen and (max-width: 300px) {
+    .lettre {
+        font-size: 1.5rem;
+        text-shadow: 2px 2px 0px black;
+    }
+}
+
+/* ======================================================== */
+/* ===== Ajustement pour les écrans de taille moyenne ===== */
+/* ======================================================== */
+
+@media screen and (min-width: 576px) {
+    body {
+        background-image: url(../images/fondMoyen.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .lettre {
+        font-size: 5rem;
+    }
+
+    footer {
+        font-size: 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+}
+
+/* ============================================================ */
+/* ===== Ajustement pour les écrans de plus grande taille ===== */
+/* ============================================================ */
+
+@media screen and (min-width: 992px) {
+
+    body {
+        font-size: 1rem;
+        background-image: url(../images/fondGrand.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .lettre {
+        font-size: 10rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 2rem;
+    }
+}
